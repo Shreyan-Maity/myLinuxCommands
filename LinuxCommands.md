@@ -1,12 +1,12 @@
 # Linux commands used till now
 
-## This the command to check the present working directory
+### This the command to check the present working directory
 
 ```
 pwd
 ```
 
-## This is the command to check the files and folders in the present directory
+### This is the command to check the files and folders in the present directory
 
 ```
 ls
@@ -15,19 +15,19 @@ ls
 ls -ltr
 ```
 
-## This is the command to create a new diretory(folder)
+### This is the command to create a new diretory(folder)
 
 ```
 mkdir NewFolder
 ```
 
-## This is the command to change directory(folder)
+### This is the command to change directory(folder)
 
 ```
 cd NewFolder
 ```
 
-## This is the command to move back to the parent diretory(folder)
+### This is the command to move back to the parent diretory(folder)
 
 ```
 cd ..
