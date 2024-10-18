@@ -33,8 +33,32 @@ cd NewFolder
 cd ..
 ```
 
-## This is the command to check all your command history used by you
+### This is the command to check all your command history used by you
 
 ```
 history
+```
+
+### This is the command to check available disk space /storage space of the vm
+
+```
+df
+```
+
+### This is the command to check your memory of the vm
+
+```
+free
+```
+
+### This is the command to check cpu of the vm
+
+```
+nproc
+```
+
+### This is the command to check all your task running at the time
+
+```
+top
 ```
