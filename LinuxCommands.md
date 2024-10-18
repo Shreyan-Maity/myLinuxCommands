@@ -88,6 +88,21 @@ chmod 777 <fileName>.<extesion> # Giving permission to the file
 chmod 777 myFile.sh 
 ```
 
+### This is the command to see the file containts
+```
+cat <fileName>.<extesion>
+```
+
+### This the command to edit the file 
+##### You should press  ```esc + i```
+```
+vim <fileName>.<extesion>
+```
+```
+vim myFile.sh
+```
+##### You Should press  ```esc > :wq!```  to save and exit the file
+
 ### This is the command to execute the file
 ```
 ./<fileName>.<extesion> # To Execute the file
