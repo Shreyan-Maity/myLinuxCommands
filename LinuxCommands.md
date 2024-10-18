@@ -33,6 +33,15 @@ cd NewFolder
 cd ..
 ```
 
+### This is the command to print the current time and date in utc
+```
+date
+```
+##### Output
+```
+Fri Oct 18 02:01:48 UTC 2024
+```
+
 ### This is the command to check all your command history used by you
 
 ```
@@ -85,4 +94,56 @@ chmod 777 myFile.sh
 ```
 ```
 ./myFile.sh # "myFile.sh" will get executed
+```
+
+### This is the command to check all the running process in your VM
+```
+ps -ef
+```
+##### Output like below
+```
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 01:10 ?        00:00:02 /sbin/init
+root           2       0  0 01:10 ?        00:00:00 [kthreadd]
+root           3       2  0 01:10 ?        00:00:00 [pool_workqueue_release]
+root           4       2  0 01:10 ?        00:00:00 [kworker/R-rcu_g]
+root           5       2  0 01:10 ?        00:00:00 [kworker/R-rcu_p]
+root           6       2  0 01:10 ?        00:00:00 [kworker/R-slub_]
+root           7       2  0 01:10 ?        00:00:00 [kworker/R-netns]
+root           9       2  0 01:10 ?        00:00:00 [kworker/0:0H-events_highpri]
+root          12       2  0 01:10 ?        00:00:00 [kworker/R-mm_pe]
+root          13       2  0 01:10 ?        00:00:00 [rcu_tasks_rude_kthread]
+root          14       2  0 01:10 ?        00:00:00 [rcu_tasks_trace_kthread]
+root          15       2  0 01:10 ?        00:00:00 [ksoftirqd/0]
+root          16       2  0 01:10 ?        00:00:00 [rcu_sched]
+root         728       1  0 01:10 ?        00:00:00 /usr/sbin/ModemManager
+root         729       1  0 01:10 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear - linux
+root         883       2  0 01:11 ?        00:00:00 [kworker/u4:4-events_unbound]
+root         893       1  0 01:11 ?        00:00:00 sshd: /usr/sbin/sshd -D -o AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_autho
+root        1370       1  0 01:16 ?        00:00:00 /snap/amazon-ssm-agent/9565/amazon-ssm-agent
+root        1394     893  0 01:16 ?        00:00:00 sshd: ubuntu [priv]
+root        1397       2  0 01:16 ?        00:00:00 [psimon]
+ubuntu      1399       1  0 01:16 ?        00:00:00 /usr/lib/systemd/systemd --user
+```
+
+### Use of "grep" command 
+##### to find the specific amazon tasks running we can sort it out with grep command
+```
+ps -ef | grep amazon 
+```
+##### Output like below as in the above we can see only 1 amazon process going on
+```
+root        1370       1  0 01:16 ?        00:00:00 /snap/amazon-ssm-agent/9565/amazon-ssm-agent
+ubuntu      1931    1906  0 02:00 pts/2    00:00:00 grep --color=auto amazon # **this line is not so important**
+```
+
+### Now we can use the **awk** command to filter out the process id of amazon 
+##### this will only print the process id which is on the 2nd column
+```
+ps -ef | grep amazon | awk -F" " '{print $2}'
+```
+##### Output
+```
+1370 # this matches with the above
+1944 # this is temporary so you can avoid
 ```
