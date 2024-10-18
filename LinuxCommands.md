@@ -62,3 +62,27 @@ nproc
 ```
 top
 ```
+
+### This is the command to create a file in the cli
+```
+touch <fileName>.<extesion>
+```
+```
+touch myFile.sh # This is a shell file creation
+```
+
+### This is the command to give permisssion to the file
+```
+chmod 777 <fileName>.<extesion> # Giving permission to the file
+```
+```
+chmod 777 myFile.sh 
+```
+
+### This is the command to execute the file
+```
+./<fileName>.<extesion> # To Execute the file
+```
+```
+./myFile.sh # "myFile.sh" will get executed
+```
