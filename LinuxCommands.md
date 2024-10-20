@@ -21,6 +21,11 @@ ls -ltr
 mkdir NewFolder
 ```
 
+### This is the command to remove a existing diretory(folder)
+```
+rmdir NewFolder
+```
+
 ### This is the command to change directory(folder)
 
 ```
